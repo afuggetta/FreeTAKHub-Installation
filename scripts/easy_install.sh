@@ -9,7 +9,7 @@ set -o pipefail
 # trap or catch signals and direct execution to cleanup
 trap cleanup SIGINT SIGTERM ERR EXIT
 
-REPO="https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git"
+REPO="https://github.com/afuggetta/FreeTAKHub-Installation.git"
 
 ###############################################################################
 # Print out helpful message.
@@ -417,7 +417,7 @@ function run_playbook() {
   if [[ -n "${CORE-}" ]]; then
     ansible-playbook -u root -i localhost, --connection=local ${WEBMAP_FORCE_INSTALL-} install_mainserver.yml ${ANSIBLE_VERBOSITY-}
   else
-    ansible-playbook -u root -i localhost, --connection=local ${WEBMAP_FORCE_INSTALL-} install_all.yml ${ANSIBLE_VERBOSITY-}
+    ansible-playbook -u root -i localhost, --connection=local ${WEBMAP_FORCE_INSTALL-} install_all.yml ${ANSIBLE_VERBOSITY-} --extra-vars "zerotierip=10.147.19.102"
   fi
 
 

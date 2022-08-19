@@ -4,6 +4,8 @@
 *.pyc
 .cache
 .vscode
+.infracost
+.history
 
 .config.nodes.json
 .config.runtime.json

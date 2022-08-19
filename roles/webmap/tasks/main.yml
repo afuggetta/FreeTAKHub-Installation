@@ -4,15 +4,9 @@
     msg: "non-intel, skipping webmap install"
   when: (ansible_architecture != "x86_64") or (not webmap_force_install)
 
-- name: Get public IPv4
-  uri:
-    url: http://ifconfig.me/ip
-    return_content: true
-  register: ip_response
-
-- name: Set public IPv4
+- name: Set ZeroTier IPv4
   set_fact:
-    webmap_public_ipv4: "{{ ip_response.content }}"
+    webmap_public_ipv4: "{{ zerotierip }}"
 
 - name: Print IPv4
   debug:
