@@ -354,13 +354,14 @@ function handle_git_repository() {
   if [[ ! -d ~/FreeTAKHub-Installation ]]; then
 
     echo -e "NOT FOUND"
+    echo ${REPO}
     echo -e "Cloning the FreeTAKHub-Installation repository...${NOFORMAT}"
     git clone ${REPO}
 
     cd ~/FreeTAKHub-Installation
 
   else
-
+    echo ${REPO}
     echo -e "FOUND"
 
     cd ~/FreeTAKHub-Installation
