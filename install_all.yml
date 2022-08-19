@@ -8,7 +8,7 @@
     - freetakserver_ui
     - webmap
     - murmur
-    - videoserver
+    # - videoserver
     - nodered
 
   vars:
